@@ -1,0 +1,191 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * Web fonts are loaded via <link> in src/routes/__root.tsx.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-sans: "Barlow", system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 10px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-deep: var(--primary-deep);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-status-ok: var(--status-ok);
+  --color-status-ok-soft: var(--status-ok-soft);
+  --color-status-warn: var(--status-warn);
+  --color-status-warn-soft: var(--status-warn-soft);
+  --color-status-bad: var(--status-bad);
+  --color-status-bad-soft: var(--status-bad-soft);
+  --color-status-manual: var(--status-manual);
+  --color-status-manual-soft: var(--status-manual-soft);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.985 0.006 100);
+  --foreground: oklch(0.22 0.03 145);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.03 145);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.03 145);
+
+  /* Field green + harvest yellow */
+  --primary: oklch(0.48 0.13 142);
+  --primary-foreground: oklch(0.99 0.005 100);
+  --primary-deep: oklch(0.27 0.06 148);
+  --secondary: oklch(0.95 0.02 130);
+  --secondary-foreground: oklch(0.27 0.06 148);
+  --muted: oklch(0.955 0.01 110);
+  --muted-foreground: oklch(0.46 0.03 140);
+  --accent: oklch(0.89 0.18 100);
+  --accent-foreground: oklch(0.22 0.04 145);
+  --destructive: oklch(0.56 0.2 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.9 0.015 120);
+  --input: oklch(0.88 0.015 120);
+  --ring: oklch(0.48 0.13 142);
+
+  --status-ok: oklch(0.45 0.13 145);
+  --status-ok-soft: oklch(0.93 0.06 145);
+  --status-warn: oklch(0.5 0.12 70);
+  --status-warn-soft: oklch(0.94 0.08 90);
+  --status-bad: oklch(0.5 0.18 27);
+  --status-bad-soft: oklch(0.94 0.04 27);
+  --status-manual: oklch(0.45 0.1 240);
+  --status-manual-soft: oklch(0.94 0.03 240);
+
+  --gradient-hero: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--primary-deep) 92%, transparent) 0%,
+    color-mix(in oklab, var(--primary-deep) 70%, transparent) 40%,
+    transparent 75%
+  );
+  --gradient-band: linear-gradient(135deg, var(--primary-deep), var(--primary));
+  --shadow-card: 0 1px 2px color-mix(in oklab, var(--primary-deep) 8%, transparent),
+    0 12px 32px -12px color-mix(in oklab, var(--primary-deep) 25%, transparent);
+  --shadow-float: 0 30px 60px -20px color-mix(in oklab, var(--primary-deep) 45%, transparent);
+
+  --chart-1: oklch(0.48 0.13 142);
+  --chart-2: oklch(0.89 0.18 100);
+  --chart-3: oklch(0.27 0.06 148);
+  --chart-4: oklch(0.6 0.1 80);
+  --chart-5: oklch(0.7 0.1 130);
+  --sidebar: oklch(0.985 0.006 100);
+  --sidebar-foreground: oklch(0.22 0.03 145);
+  --sidebar-primary: oklch(0.48 0.13 142);
+  --sidebar-primary-foreground: oklch(0.99 0.005 100);
+  --sidebar-accent: oklch(0.95 0.02 130);
+  --sidebar-accent-foreground: oklch(0.27 0.06 148);
+  --sidebar-border: oklch(0.9 0.015 120);
+  --sidebar-ring: oklch(0.48 0.13 142);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.005em;
+    line-height: 1.02;
+  }
+}
+
+@utility bg-hero-overlay {
+  background-image: var(--gradient-hero);
+}
+@utility bg-band {
+  background-image: var(--gradient-band);
+}
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+@utility shadow-float {
+  box-shadow: var(--shadow-float);
+}
+@utility eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+}
+@utility accent-rule {
+  &::before {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 4px;
+    margin-bottom: 1rem;
+    background: var(--accent);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@utility animate-rise {
+  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
